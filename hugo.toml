@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://inkychew.github.io/i-service/'
+languageCode = 'zh-tw'
+title = 'i-service'
 
 [build]
   [build.buildStats]
