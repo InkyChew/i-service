@@ -1,10 +1,14 @@
 local_backend: true
 
 backend:
-  name: git-gateway
+  name: github
+  repo: InkyChew/i-service
   branch: main
+  auth_scope: repo
+  base_url: https://api.github.com
+  auth_endpoint: oauth
 
-site_url: https://your-site.com
+site_url: https://inkychew.github.io/i-service
 
 media_folder: "static/images"
 public_folder: "/images"
