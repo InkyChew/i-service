@@ -1,0 +1,131 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: https://your-site.com
+
+media_folder: "static/images"
+public_folder: "/images"
+
+logo:
+  src: static/images/logo.png
+  show_in_header: true
+
+collections:
+  - name: "settings"
+    label: "網站管理"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - file: "data/settings.yml"
+        label: "全域設定"
+        name: "general"
+        fields:
+          - {label: "品牌名稱", name: "logo_text", widget: "string", required: false}
+          - {label: "品牌Logo圖片", name: "logo_image", widget: "image", required: false}
+          - {label: "品牌Logo (Favicon)", name: "favicon", widget: "image", required: false}
+          - label: "視覺風格"
+            name: "appearance"
+            widget: "object"
+            fields:
+            - {label: "主色調", name: "primary_color", widget: "color"}
+          - label: "導覽列 (Navbar)"
+            name: "navbar"
+            widget: "object"
+            fields:
+              - {label: "服務區塊導覽文字", name: "service_text", widget: "string"}
+              - {label: "關於區塊導覽文字", name: "about_text", widget: "string"}
+              - {label: "常見問題區塊導覽文字", name: "faq_text", widget: "string"}
+              - {label: "聯絡區塊導覽文字", name: "contact_text", widget: "string"}
+          - label: "頁尾 (Footer)"
+            name: "footer"
+            widget: "object"
+            fields:
+              - {label: "自我介紹短語", name: "bio", widget: "text"}
+              - {label: "版權資訊", name: "copyright", widget: "string"}
+              - label: "社群平台"
+                name: "socials"
+                widget: "list"
+                fields:
+                  - {label: "平台名稱", name: "platform", widget: "string"}
+                  - {label: "連結網址", name: "url", widget: "string"}
+
+  - name: "pages"
+    label: "頁面管理"
+    editor:
+      preview: false
+    files:
+      - file: "content/_index.md"
+        label: "首頁內容編輯"
+        name: "home"
+        fields:          
+          - label: "主視覺區塊設定"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "主標題", name: "title", widget: "string"}
+              - {label: "副標題", name: "subtitle", widget: "text"}
+              - {label: "主要按鈕文字", name: "cta_primary", widget: "string"}
+              - {label: "次要按鈕文字", name: "cta_secondary", widget: "string"}
+              - {label: "形象照片", name: "image", widget: "image"}
+
+          - label: "服務區塊設定"
+            name: "services_section"
+            widget: "object"
+            fields:
+              - { label: "區塊標題", name: "title", widget: "string" }
+              - label: "服務清單"
+                name: "services"
+                widget: "list"
+                summary: "{{fields.name}}"
+                fields:
+                  - { label: "服務名稱", name: "name", widget: "string" }
+                  - { label: "描述", name: "desc", widget: "text" }
+                  - { label: "價格", name: "price", widget: "number" }
+                  - { label: "連結文字", name: "cta_text", widget: "string" }
+                  - { label: "連結", name: "cta_link", widget: "string" }
+         
+          - label: "聯絡區塊設定"
+            name: "contact_section"
+            widget: "object"
+            fields:
+              - {label: "區塊標題", name: "title", widget: "string"}
+              - {label: "描述文字", name: "subtitle", widget: "text"}
+              - label: "聯繫方式清單"
+                name: "buttons"
+                widget: "list"
+                summary: "{{fields.label}}"
+                fields:
+                  - {label: "顯示文字", name: "label", widget: "string"}
+                  - {label: "網址/連結", name: "url", widget: "string"}
+                  - label: "按鈕風格"
+                    name: "style_type"
+                    widget: "select"
+                    options:
+                      - { label: "品牌藍 (主要)", value: "primary" }
+                      - { label: "LINE 綠 (社群)", value: "success" }
+                      - { label: "簡約白 (次要)", value: "outline" }
+                      
+          - label: "常見問題區塊"
+            name: "faq_section"
+            widget: "object"
+            fields:
+              - {label: "區塊標題", name: "title", widget: "string"}
+              - label: "問題清單"
+                name: "questions"
+                widget: "list"
+                summary: "{{fields.question}}"
+                fields:
+                  - {label: "問題", name: "question", widget: "string"}
+                  - {label: "回答", name: "answer", widget: "text"}
+
+          - label: "關於我區塊設定"
+            name: "about_section"
+            widget: "object"
+            fields:
+              - {label: "區塊標題", name: "title", widget: "string"}
+
+          - {label: "詳細介紹內容 (本文)", name: "body", widget: "markdown"}
