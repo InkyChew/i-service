@@ -1,6 +1,6 @@
 logo_text: "MING COACH"      # 刪除此行則不顯示文字
-logo_image: "/images/logo.png" # 移除路徑則不顯示圖片
-favicon: "/images/favicon.png"
+logo_image: "images/logo.png" # 移除路徑則不顯示圖片
+favicon: "images/favicon.png"
 
 appearance:
   primary_color: "#4A67C9"
