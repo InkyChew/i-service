@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@theme {
+    --color-primary: var(--cms-primary);
+    --color-site-bg: var(--cms-bg);
+
+    --color-primary-50: color-mix(in srgb, var(--color-primary), white 95%);
+    --color-primary-100: color-mix(in srgb, var(--color-primary), white 80%);
+    --color-primary-200: color-mix(in srgb, var(--color-primary), white 60%);
+    --color-primary-300: color-mix(in srgb, var(--color-primary), white 40%);
+    --color-primary-400: color-mix(in srgb, var(--color-primary), white 20%);
+    --color-primary-600: color-mix(in srgb, var(--color-primary), black 15%);
+    --color-primary-700: color-mix(in srgb, var(--color-primary), black 30%);
+    --color-primary-800: color-mix(in srgb, var(--color-primary), black 45%);
+    --color-primary-900: color-mix(in srgb, var(--color-primary), black 60%);
+    --color-primary-950: color-mix(in srgb, var(--color-primary), black 80%);
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#menu-toggle:checked~label #open-icon {
+    display: none;
+}
+
+#menu-toggle:checked~label #close-icon {
+    display: block;
+}
+
+body:has(#menu-toggle:checked) {
+    overflow: hidden;
+}

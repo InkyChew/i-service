@@ -1,0 +1,21 @@
+logo_text: "MING COACH"      # 刪除此行則不顯示文字
+logo_image: "/images/logo.png" # 移除路徑則不顯示圖片
+favicon: "/images/favicon.png"
+
+appearance:
+  primary_color: "#4A67C9"
+
+navbar:
+  service_text: "教學服務"
+  about_text: "關於我"
+  faq_text: "常見問題"
+  contact_text: "立即預約"
+
+footer:
+  bio: "專注於提供高品質的商務英語教學，協助你在職場展現自信。"
+  copyright: "© 2026 MING COACH. 版權所有"
+  socials:
+    - platform: "LINE"
+      url: "https://line.me/ti/p/..."
+    - platform: "IG"
+      url: "https://instagram.com/..."

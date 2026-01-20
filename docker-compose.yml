@@ -1,0 +1,31 @@
+services:
+  hugo:
+    build: .
+    command: server --buildDrafts --bind 0.0.0.0 --poll 700ms
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/src
+      - /src/node_modules
+    environment:
+      - HUGO_BASEURL=http://localhost:1313
+    restart: always
+
+  cms-ui:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./static/admin:/usr/share/nginx/html/admin:ro
+
+  # 核心：負責繞過登入，直接寫入檔案
+  cms-proxy:
+    image: node:18-alpine
+    working_dir: /src
+    volumes:
+      - .:/src
+    ports:
+      - "8081:8081"
+    # 安裝並執行 decap-server，它會監聽 8081 埠口
+    command: sh -c "npx decap-server"
+    restart: always
