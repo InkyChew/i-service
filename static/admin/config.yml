@@ -4,11 +4,8 @@ backend:
   name: github
   repo: InkyChew/i-service
   branch: main
-  auth_scope: repo
-  base_url: https://api.github.com
-  auth_endpoint: oauth
 
-# site_url: https://inkychew.github.io/i-service
+publish_mode: editorial_workflow
 
 media_folder: "static/images"
 public_folder: "/images"
