@@ -5,10 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Data.settings.site_title }}</title>
+    <meta name="description" content="{{ .Site.Data.settings.site_description }}">
+    <link rel="canonical" href="{{ .Permalink }}">
 
     {{ with .Site.Data.settings.favicon }}
     <link rel="icon" type="image/png" href="{{ . | relURL }}">
     {{ end }}
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Site.Data.settings.site_title }}">
+    <meta property="og:description" content="{{ .Site.Data.settings.site_description }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Site.Data.settings.site_title }}">
+    <meta name="twitter:description" content="{{ .Site.Data.settings.site_description }}">
+
+    {{- with .Site.Data.settings.share_image -}}
+        <meta property="og:image" content="{{ . | absURL }}">
+        <meta name="twitter:image" content="{{ . | absURL }}">
+    {{- end -}}
 
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 

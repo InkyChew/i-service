@@ -1,4 +1,6 @@
 site_title: "MING COACH"
+site_description: "MING COACH專注於提供高品質的商務英語教學，協助你在職場展現自信。"
+share_image: "images/share-image.png"
 favicon: "images/favicon.png"
 logo_text: "MING COACH"      # 刪除此行則不顯示文字
 logo_image: "images/logo.png" # 移除路徑則不顯示圖片
