@@ -14,18 +14,27 @@ services_section:
     - name: "商務簡報力衝刺"
       desc: "針對即將到來的英文簡報進行深度打磨，包含語調校正、投影片敘事邏輯與 QA 應對。"
       price: 2500
+      currency: "NT$"
+      unit: "堂"
       cta_text: "立即預約"
       cta_link: "#contact"
+      image: ""
     - name: "外企面試模擬班"
       desc: "分析目標職位需求，進行全英文模擬面試，並提供詳細的口語反饋與履歷修飾建議。"
       price: 3000
+      currency: "NT$"
+      unit: "堂"
       cta_text: "立即預約"
       cta_link: "#contact"
+      image: ""
     - name: "日常英語社交力"
       desc: "擺脫教科書式的英語！學習在午餐會議、商務晚宴中如何自然地與外國同事寒暄。"
       price: 1800
+      currency: "NT$"
+      unit: "小時"
       cta_text: "立即預約"
       cta_link: "#contact"
+      image: ""
 
 # 聯絡區塊設定
 contact_section:

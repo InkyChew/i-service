@@ -42,16 +42,26 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {{ $btnText := .Params.services_section.button_text | default "立即報名" }}
             {{ range .Params.services_section.services }}
             <div
-                class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">{{ .name }}</h3>
-                <p class="text-gray-600 mb-8 flex-grow leading-relaxed">{{ .desc }}</p>
-                <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-50">
-                    <span class="text-xl font-bold text-primary">NT$ {{ .price }} <small
-                            class="text-sm text-gray-400 font-normal">/ 堂</small></span>
-                    <a href="{{ .cta_link }}" class="text-primary font-semibold hover:underline">{{ .cta_text }} →</a>
+                class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col overflow-hidden">
+
+                {{ if .image }}
+                <div class="h-48 overflow-hidden mb-2 ">
+                    <img src="{{ .image | relURL }}" alt="{{ .name }}"
+                        class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                </div>
+                {{ end }}
+
+                <div class="flex flex-col flex-grow">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">{{ .name }}</h3>
+                    <p class="text-gray-600 mb-8 flex-grow leading-relaxed">{{ .desc }}</p>
+                    <div class="flex items-center justify-between mt-auto pt-6 border-t border-gray-50">
+                        <span class="text-xl font-bold text-primary">{{ .currency | default "NT$" }} {{ .price }}<small
+                                class="text-sm text-gray-400 font-normal"> / {{ .unit | default "堂" }}</small></span>
+                        <a href="{{ .cta_link }}" class="text-primary font-semibold hover:underline">{{ .cta_text }}
+                            →</a>
+                    </div>
                 </div>
             </div>
             {{ end }}
@@ -99,8 +109,8 @@
                     class="block group relative overflow-hidden rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
                     <div
                         class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
-                        <span
-                            class="bg-white text-primary px-4 py-2 rounded-full text-sm font-bold shadow-lg">{{ .image_text }}</span>
+                        <span class="bg-white text-primary px-4 py-2 rounded-full text-sm font-bold shadow-lg">{{
+                            .image_text }}</span>
                     </div>
 
                     <img src="{{ .image }}" alt="Success Proof"

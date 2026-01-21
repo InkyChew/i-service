@@ -91,8 +91,11 @@ collections:
                   - { label: "服務名稱", name: "name", widget: "string" }
                   - { label: "描述", name: "desc", widget: "text" }
                   - { label: "價格", name: "price", widget: "number" }
+                  - { label: "貨幣符號", name: "currency", widget: "string", default: "NT$", required: false" }
+                  - { label: "計價單位", name: "unit", widget: "string", default: "堂", required: false }
                   - { label: "連結文字", name: "cta_text", widget: "string" }
                   - { label: "連結", name: "cta_link", widget: "string" }
+                  - { label: "圖片", name: "image", widget: "image", required: false }
          
           - label: "聯絡區塊設定"
             name: "contact_section"
