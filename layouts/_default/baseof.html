@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default " zh-tw" }}">
+<html lang="{{ .Site.LanguageCode | default "zh-tw" }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ .Site.Data.settings.site_title }}</title>
 
     {{ with .Site.Data.settings.favicon }}
     <link rel="icon" type="image/png" href="{{ . | relURL }}">
@@ -32,7 +32,7 @@
                 <img src="{{ . | relURL }}" alt="Logo" class="h-8 md:h-10 w-auto object-contain">
                 {{ end }}
                 {{ with .Site.Data.settings.logo_text }}
-                <span class="text-xl md:text-2xl font-black tracking-tighter text-primary uppercase">{{ . }}</span>
+                <span class="text-xl md:text-2xl font-black tracking-tighter text-primary">{{ . }}</span>
                 {{ end }}
             </a>
 
