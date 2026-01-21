@@ -8,11 +8,12 @@ backend:
   base_url: https://api.github.com
   auth_endpoint: oauth
 
-site_url: https://inkychew.github.io/i-service
+# site_url: https://inkychew.github.io/i-service
 
 media_folder: "static/images"
 public_folder: "/images"
 
+# 模板發行者的LOGO設定
 logo:
   src: static/images/logo.png
   show_in_header: true
