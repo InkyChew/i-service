@@ -26,10 +26,12 @@ collections:
         label: "全域設定"
         name: "general"
         fields:
-          - {label: "網站名稱", name: "site_title", widget: "string", hint: "瀏覽器網站名稱"}
-          - {label: "網站圖示", name: "favicon", widget: "image", required: false, hint: "瀏覽器網站圖示 (Favicon)"}
-          - {label: "品牌名稱", name: "logo_text", widget: "string", required: false, hint: "在導覽列上顯示品牌名稱"}
-          - {label: "品牌Logo", name: "logo_image", widget: "image", required: false, hint: "在導覽列上顯示品牌Logo"}
+          - {label: "網站名稱", name: "site_title", widget: "string", hint: "網站名稱"}
+          - {label: "網站描述", name: "site_description", widget: "text", hint: "網站描述 (meta description)"}
+          - {label: "分享圖", name: "share_image", widget: "image", required: false, hint: "建議尺寸 1200x630px，用於 Facebook/Line 分享"}
+          - {label: "網站圖示", name: "favicon", widget: "image", required: false, hint: "建議上傳 .ico 或 .png 格式的網站圖示 (favicon)"}
+          - {label: "品牌名稱", name: "logo_text", widget: "string", required: false, hint: "在導覽列上顯示的品牌名稱"}
+          - {label: "品牌Logo", name: "logo_image", widget: "image", required: false, hint: "在導覽列上顯示的品牌Logo"}
           - label: "視覺風格"
             name: "appearance"
             widget: "object"
