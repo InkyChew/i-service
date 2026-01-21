@@ -35,7 +35,8 @@
 <section id="services" class="py-24 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">{{ .Params.services_section.title | default "精選教學服務"
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">{{ .Params.services_section.title | default
+                "精選教學服務"
                 }}</h2>
             <div class="mt-4 w-20 h-1 bg-primary mx-auto"></div>
         </div>
@@ -66,6 +67,50 @@
         <div class="mx-auto text-gray-600 leading-loose">
             {{ .Content }}
         </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">{{ .Params.testimonials_section.title | default
+                "學員真實回饋" }}</h2>
+            <div class="mt-4 w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {{ range .Params.testimonials_section.featured_reviews }}
+            <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-primary">
+                <p class="text-gray-700 leading-relaxed italic mb-4">「{{ .content }}」</p>
+                {{ if or .name .role }}
+                <div class="text-sm font-bold text-gray-900">
+                    {{ .name }}{{ if and .name .role }} <span class="mx-1 text-gray-300">|</span> {{ end }}{{ .role }}
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
+            {{ range .Params.testimonials_section.screenshot_wall }}
+            <div class="break-inside-avoid">
+                <a href="{{ .image_link }}" target="_blank"
+                    class="block group relative overflow-hidden rounded-xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div
+                        class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10">
+                        <span
+                            class="bg-white text-primary px-4 py-2 rounded-full text-sm font-bold shadow-lg">{{ .image_text }}</span>
+                    </div>
+
+                    <img src="{{ .image }}" alt="Success Proof"
+                        class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                </a>
+            </div>
+            {{ end }}
+        </div>
+
+        <div class="mt-12 text-center text-gray-400 text-sm">{{ .Params.testimonials_section.disclaimer }}</div>
     </div>
 </section>
 

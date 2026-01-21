@@ -50,6 +50,37 @@ faq_section:
     - question: "課程有提供講義嗎？"
       answer: "是的，每堂課結束後我都會提供**課後筆記與錄音檔**，方便你隨時複習。"
 
+# 見證區塊設定
+testimonials_section:
+  title: "來自學員的真實聲音"
+  featured_reviews:
+    - name: "Kevin" # 可選
+      role: "科技業主管" # 可選
+      content: "教練的商務簡報課讓我順利通過年度預算會議，邏輯變得非常清晰。"    
+    - name: "" # 可選
+      role: "" # 可選
+      content: "這是我參加過最實用的面試模擬課，老師提供的關鍵字非常精準。"
+  screenshot_wall:
+    - image: "https://picsum.photos/seed/proof1/400/600"
+      image_text: "2026最有效的商務簡報課!"
+      image_link: "https://picsum.photos/seed/proof1/1200/1800"
+    - image: "https://picsum.photos/seed/proof2/400/300"
+      image_text: "查看詳情"
+      image_link: "https://picsum.photos/seed/proof2/1200/900"
+    - image: "https://picsum.photos/seed/proof3/400/500"
+      image_text: "查看詳情"
+      image_link: "https://picsum.photos/seed/proof3/1200/1500"
+    - image: "https://picsum.photos/seed/proof4/400/400"
+      image_text: "查看詳情"
+      image_link: "https://picsum.photos/seed/proof4/1200/1200"
+    - image: "https://picsum.photos/seed/proof5/400/700"
+      image_text: "查看詳情"
+      image_link: "https://picsum.photos/seed/proof5/1200/2100"
+    - image: "https://picsum.photos/seed/proof6/400/350"
+      image_text: "查看詳情"
+      image_link: "https://www.google.com"
+  disclaimer: "為了保護學員隱私，部分對話截圖已模糊化處理，所有回饋皆經學員本人授權。"
+
 # 關於我區塊設定
 about_section:
   title: "關於我的教學理念"

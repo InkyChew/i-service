@@ -42,6 +42,7 @@ collections:
             fields:
               - {label: "服務區塊導覽文字", name: "service_text", widget: "string"}
               - {label: "關於區塊導覽文字", name: "about_text", widget: "string"}
+              - {label: "見證區塊導覽文字", name: "testimonials_text", widget: "string"}
               - {label: "常見問題區塊導覽文字", name: "faq_text", widget: "string"}
               - {label: "聯絡區塊導覽文字", name: "contact_text", widget: "string"}
           - label: "頁尾 (Footer)"
@@ -125,6 +126,27 @@ collections:
                 fields:
                   - {label: "問題", name: "question", widget: "string"}
                   - {label: "回答", name: "answer", widget: "text"}
+
+          - label: "見證區塊"
+            name: "testimonials_section"
+            widget: "object"
+            fields:
+              - { label: "區塊標題", name: "title", widget: "string" }
+              - label: "關鍵文字評論"
+                name: "featured_reviews"
+                widget: "list"
+                fields:
+                  - { label: "姓名", name: "name", widget: "string", required: false }
+                  - { label: "背景職位", name: "role", widget: "string", required: false }
+                  - { label: "評論內容", name: "content", widget: "text" }
+              - label: "截圖牆"
+                name: "screenshot_wall"
+                widget: "list"
+                fields:
+                  - { label: "截圖", name: "image", widget: "image" }
+                  - { label: "連結文字", name: "image_text", widget: "string", hint: "滑鼠移上圖片顯示的文字，也有助於 SEO" }
+                  - { label: "目標連結", name: "image_link", widget: "string", hint: "點擊後跳轉的網址或圖片路徑" }
+              - { label: "隱私免責聲明/備註", name: "disclaimer", widget: "string", required: false }
 
           - label: "關於我區塊設定"
             name: "about_section"

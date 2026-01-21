@@ -8,6 +8,7 @@ appearance:
 navbar:
   service_text: "教學服務"
   about_text: "關於我"
+  testimonials_text: "見證分享"
   faq_text: "常見問題"
   contact_text: "立即預約"
 
